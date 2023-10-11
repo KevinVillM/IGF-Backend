@@ -61,10 +61,9 @@ const usuariosPost = async (req, res = response) => {
 
     await usuario.save();
     
-    res.json({
-        msg: 'post API - controlador',
+    res.json(
         usuario
-    });
+    );
 }
 
 const usuariosDelete = async(req, res = response) => {

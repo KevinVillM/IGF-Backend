@@ -36,11 +36,11 @@ router.put('/:id', [
 ], usuariosPut);
 
 router.post('/', [
-    check('nombre','El nombre es obligatorio').not().isEmpty(),
+    check('nom_usuario','El nombre es obligatorio').not().isEmpty(),
     check('password','El password debe ser de más de 6 letras').isLength({min: 6}),
     check('email').custom(emailExiste),
     check('email','El correo no  es valido').isEmail(),
-    check('rol').custom(esRolValido),
+    //check('rol').custom(esRolValido),
     validarCampos
 ], usuariosPost);
 

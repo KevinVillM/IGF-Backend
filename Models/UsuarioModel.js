@@ -16,7 +16,6 @@ const usuarioSchema = new mongoose.Schema({
     },
     img_url: {
         type: String,
-        required: true
     }
 });
 
