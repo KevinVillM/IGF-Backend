@@ -38,7 +38,7 @@ class Server{
         this.app.use(express.json());
 
         // Directorio público
-        this.app.use(express.static('public'));
+        this.app.use(express.static('Public'));
             //Carga de archivos
             this.app.use(fileUpload({
                 useTempFiles : true,
