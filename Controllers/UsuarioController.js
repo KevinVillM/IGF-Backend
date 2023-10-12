@@ -14,19 +14,17 @@ const usuariosGet = async (req, res = response) => {
 const usuarioUnoGet = async (req, res = response) => {
     const {id} = req.params;
     const usuario = await Usuario.findById(id);
-    res.json({
-        msg: 'get API - controlador',
+    res.json(
         usuario
-    });
+    );
 }
 
 const usuarioPorEmailGet = async (req, res = response) => {
     const {email} = req.params;
     const usuario = await Usuario.findOne({email});
-    res.json({
-        msg: 'get API - controlador',
+    res.json(
         usuario
-    });
+    );
 }
 
 const usuariosPut = async(req, res = response) => {
@@ -67,15 +65,14 @@ const usuariosPost = async (req, res = response) => {
 
 const usuariosDelete = async(req, res = response) => {
 
+    //eliminar fisicamente
     const {id} = req.params;
-    const usuario = await Usuario.findByIdAndUpdate(id);
+    const usuario = await Usuario.findByIdAndDelete(id);
 
-    const usuarioAutenticado = req.usuario;
-
-    res.json({
-        msg: 'delete API - controlador',
+    res.json(
         usuario
-    });
+    );
+
 }
 
 
