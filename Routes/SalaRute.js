@@ -1,6 +1,6 @@
 const {Router} = require('express');
 const { check } = require('express-validator');
-const { validarCampos, validarJWT } = require('../middlewares');
+const { validarCampos, validarJWT } = require('../Middlewares');
 const { crearSala, getSala, actualizarSala, eliminarSala, getUnaSala } = require('../Controllers/SalaController');
 const { salaPorID, salaPorCodigo } = require('../Helpers/Db_Validation');
 
