@@ -6,7 +6,6 @@ const { validarCampos, validarJWT } = require('../Middlewares');
 const { crearCaptura, getCaptura, getUnaCaptura, actualizarCaptura, eliminarCaptura } = require('../Controllers/CapturaController');
 const { capturaPorID } = require('../Helpers/Db_Validation');
 
-
 const router = Router();
 
 router.get('/', validarJWT, getCaptura);
