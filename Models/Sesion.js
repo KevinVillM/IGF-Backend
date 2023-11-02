@@ -19,7 +19,7 @@ const SesionSchema = new mongoose.Schema({
     sala: {
         type: mongoose.Schema.Types.ObjectId,
         ref: 'Sala',
-        required: true
+        required: true,
     },
 });
 

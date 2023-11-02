@@ -23,8 +23,8 @@ const getUnaCaptura = async(req, res = response) => {
 
 //Crear captura
 const crearCaptura = async(req, res = response) => {
-    const { url_captura, nom_captura, fecha_captura } = req.body;
-    const captura = new Captura({ url_captura, nom_captura, fecha_captura });
+    const { url_captura, nom_captura, fecha_captura, sesion } = req.body;
+    const captura = new Captura({ url_captura, nom_captura, fecha_captura, sesion });
 
     await captura.save();
     res.json({

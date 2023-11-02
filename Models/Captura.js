@@ -12,6 +12,10 @@ const CapturaSchema = new mongoose.Schema({
         type: Date,
         default: Date.now
     },
+    sesion: {
+        type: mongoose.Schema.Types.ObjectId,
+        ref: 'Sesion'
+    },
 });
 
 const Captura = mongoose.model('Captura', CapturaSchema);

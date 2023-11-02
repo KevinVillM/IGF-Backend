@@ -39,10 +39,10 @@ const crearSesion = async (req, res = response) => {
 
 const actualizarSesion = async (req, res = response) => {
     const {id} = req.params;
-    const {hora_inicio_sesion, hora_fin_sesion, fecha_sesion} = req.body;
+    const {hora_inicio_sesion, hora_fin_sesion, fecha_sesion, sala} = req.body;
 
 
-    const sesion = await Sesion.findByIdAndUpdate(id, {hora_inicio_sesion, hora_fin_sesion, fecha_sesion});
+    const sesion = await Sesion.findByIdAndUpdate(id, {hora_inicio_sesion, hora_fin_sesion, fecha_sesion, sala});
     const sesionActualizada = await Sesion.findById(id);
 
     res.json(sesionActualizada);
