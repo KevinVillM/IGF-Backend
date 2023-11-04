@@ -18,7 +18,6 @@ router.get('/:id', [
 
 router.post('/', [
     validarJWT,
-    check('url_captura', 'La url de la captura es obligatoria').not().isEmpty(),
     check('nom_captura', 'El nombre de la captura es obligatorio').not().isEmpty(),
     check('fecha_captura', 'La fecha de la captura es obligatoria').not().isEmpty(),
     validarCampos
