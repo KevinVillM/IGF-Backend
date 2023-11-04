@@ -9,7 +9,7 @@ const CapturaSchema = new mongoose.Schema({
         required: true
     },
     fecha_captura: {
-        type: Date,
+        type: String,
         default: Date.now
     },
     sesion: {

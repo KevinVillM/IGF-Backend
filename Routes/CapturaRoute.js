@@ -2,7 +2,7 @@
 
 const { Router } = require('express');
 const { check } = require('express-validator');
-const { validarCampos, validarJWT } = require('../Middlewares');
+const { validarCampos, validarJWT, } = require('../Middlewares');
 const { crearCaptura, getCaptura, getUnaCaptura, actualizarCaptura, eliminarCaptura } = require('../Controllers/CapturaController');
 const { capturaPorID } = require('../Helpers/Db_Validation');
 

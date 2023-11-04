@@ -2,14 +2,14 @@ const mongoose = require('mongoose');
 
 const SesionSchema = new mongoose.Schema({
     hora_inicio_sesion: {
-        type: Date,
+        type: String,
         required: true
     },
     hora_fin_sesion: {
-        type: Date,
+        type: String,
     },
     fecha_sesion: {
-        type: Date,
+        type: String,
         required: true
     },
     empleado: {

@@ -6,6 +6,14 @@ const Sesion = require('../Models/Sesion');
 const Captura = require('../Models/Captura');
 
 
+//validar si la fecha tiene un formato correcto sino devuelve un error
+const validarFecha = (fecha) => {
+    const fechaValida = new Date(fecha);
+    if(fechaValida == 'Invalid Date'){
+        throw new Error('La fecha no tiene un formato correcto el formato es: YYYY-MM-DD')
+    }
+}
+
 const esRolValido = async(rol) => {
     const existeRol = await Rol.findOne({rol})
     if(!existeRol){
