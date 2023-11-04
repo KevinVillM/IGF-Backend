@@ -3,8 +3,8 @@
 const { Router } = require('express');
 const { check } = require('express-validator');
 const { validarCampos, validarJWT, } = require('../Middlewares');
-const { crearCaptura, getCaptura, getUnaCaptura, actualizarCaptura, eliminarCaptura } = require('../Controllers/CapturaController');
-const { capturaPorID } = require('../Helpers/Db_Validation');
+const { crearCaptura, getCaptura, getUnaCaptura, actualizarCaptura, eliminarCaptura, getCapturaUsuario } = require('../Controllers/CapturaController');
+const { capturaPorID, usuarioPorID } = require('../Helpers/Db_Validation');
 
 const router = Router();
 
@@ -28,6 +28,12 @@ router.put('/:id', [
     check('id').custom(capturaPorID),
     validarCampos
 ], actualizarCaptura);
+
+router.get('/usuario/:id', [
+    validarJWT,
+    check('id').custom(usuarioPorID),
+    validarCampos
+], getCapturaUsuario);
 
 router.delete('/:id', [
     validarJWT,

@@ -16,6 +16,10 @@ const CapturaSchema = new mongoose.Schema({
         type: mongoose.Schema.Types.ObjectId,
         ref: 'Sesion'
     },
+    usuario: {
+        type: mongoose.Schema.Types.ObjectId,
+        ref: 'Usuario'
+    },
 });
 
 const Captura = mongoose.model('Captura', CapturaSchema);

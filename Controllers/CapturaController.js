@@ -11,6 +11,16 @@ const getCaptura = async(req, res = response) => {
     );
 }
 
+//Obtener captura por id de usuario
+const getCapturaUsuario = async(req, res = response) => {
+    const { id } = req.params;
+    const capturas = await Captura.find({ usuario: id });
+    res.json(
+        capturas
+    );
+}
+
+
 //Obtener captura por id
 const getUnaCaptura = async(req, res = response) => {
     const { id } = req.params;
@@ -23,8 +33,8 @@ const getUnaCaptura = async(req, res = response) => {
 
 //Crear captura
 const crearCaptura = async(req, res = response) => {
-    const { url_captura, nom_captura, fecha_captura, sesion } = req.body;
-    const captura = new Captura({ url_captura, nom_captura, fecha_captura, sesion });
+    const { url_captura, nom_captura, fecha_captura, sesion, usuario } = req.body;
+    const captura = new Captura({ url_captura, nom_captura, fecha_captura, sesion, usuario });
 
     await captura.save();
     res.json({
@@ -36,8 +46,8 @@ const crearCaptura = async(req, res = response) => {
 //Actualizar captura
 const actualizarCaptura = async(req, res = response) => {
     const { id } = req.params;
-    const { url_captura, nom_captura, sesion } = req.body;
-    const captura = await Captura.findByIdAndUpdate(id, { url_captura, nom_captura, sesion });
+    const { url_captura, nom_captura, sesion, usuario } = req.body;
+    const captura = await Captura.findByIdAndUpdate(id, { url_captura, nom_captura, sesion, usuario });
     res.json({
         msg: 'Captura actualizada',
         captura
@@ -60,5 +70,6 @@ module.exports = {
     getUnaCaptura,
     crearCaptura,
     actualizarCaptura,
-    eliminarCaptura
+    eliminarCaptura,
+    getCapturaUsuario
 }

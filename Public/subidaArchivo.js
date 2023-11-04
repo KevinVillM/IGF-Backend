@@ -12,11 +12,8 @@ myForm.addEventListener('submit', async(e) => {
   //Hacer visible el div cargaIcon
   cargaIcon.style.visibility = "visible";
   
-
-
   const formData = new FormData();
   formData.append('archivo', imput.files[0]);
-  console.log(formData);
 
 
 var requestOptions = {
