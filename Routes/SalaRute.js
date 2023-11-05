@@ -8,10 +8,8 @@ const { salaPorID, salaPorCodigo } = require('../Helpers/Db_Validation');
 const router = Router();
 router.get('/', validarJWT, getSala);
 
-router.get('/:id', [
+router.get('/:cod_sala', [
     validarJWT,
-    check('id').custom(salaPorID),
-    validarCampos
 ], getUnaSala);
 
 router.post('/', [

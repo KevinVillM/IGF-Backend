@@ -12,7 +12,11 @@ const empleadoSchema = new mongoose.Schema({
     dui: {
         type: String,
         required: true
-    }
+    },
+    usuario: {
+        type: mongoose.Schema.Types.ObjectId,
+        ref: 'Usuario'
+    },
 });
 
 

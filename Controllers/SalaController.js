@@ -10,13 +10,9 @@ const getSala = async (req, res = response) => {
 
 const getUnaSala = async (req, res = response) => {
     const {id} = req.params;
-    const {cod_sala,nom_sala, categoria_sala} = await Sala.findById(id);
+    const sala = await Sala.findOne({cod_sala: id});
 
-    res.json({
-        cod_sala,
-        nom_sala,
-        categoria_sala
-    });
+    res.json(sala);
 }
 
 
